@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--<![endif]-->
+
+<head>
+  <!-- BASICS -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>BikeShareLA</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/isotope.css" media="screen" />
+  <link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap-theme.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- skin -->
+  <link rel="stylesheet" href="skin/default.css">
+</head>
+
+<body>
+  <section id="header" class="appear"></section>
+  <div class="navbar navbar-fixed-top" role="navigation" data-0="line-height:100px; height:100px; background-color:rgba(0,0,0,0.3);" data-300="line-height:60px; height:60px; background-color:rgba(0,0,0,1);">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="fa fa-bars color-white"></span>
+					</button>
+        <h1><a class="navbar-brand" href="index.html" data-0="line-height:90px;" data-300="line-height:50px;">BikeShareLA</a></h1>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
+          <li><a href="#section-featured">Home</a></li>
+          <li><a href="#section-stats">Stats</a></li>
+          <li><a href="#section-seasonal">Seasonal</a></li>
+          <li><a href="#section-about">About</a></li>
+        </ul>
+      </div>
+      <!--/.navbar-collapse -->
+    </div>
+  </div>
+
+  <section id="section-featured" class="featured">
+    <div class="container">
+      <div class="row mar-bot40">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="align-center">
+            <h2 class="slogan">Analyzing Trends in Bike Data from LA</h2>
+            <h3>By: Nicholas Perisich</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section-stats" class="section appear bg-white">
+    <div class="container">
+
+      <div class="row mar-bot40">
+        <div class="col-md-offset-3 col-md-6">
+          <div class="section-header">
+            <h2 class="section-heading animated" data-animation="bounceInUp">Hover to Reveal Information</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <nav id="filter" class="col-md-12 text-center">
+          <ul>
+            <li><a href="#" class="current btn-theme btn-small" data-filter="*">All</a></li>
+            <li><a href="#" class="btn-theme btn-small" data-filter=".stations">Stations</a></li>
+            <li><a href="#" class="btn-theme btn-small" data-filter=".tripinfo">Trip Info</a></li>
+            <li><a href="#" class="btn-theme btn-small" data-filter=".customerstats">Customer Stats</a></li>
+          </ul>
+        </nav>
+        <div class="col-md-12">
+          <div class="row">
+            <div class="portfolio-items isotopeWrapper clearfix" id="3">
+
+              <article class="col-md-4 isotopeItem tripinfo">
+                <div class="portfolio-item">
+                  <img src="img/portfolio/avgtime.jpg" alt="" />
+                  <div class="portfolio-desc align-center">
+                    <div class="folio-info">
+                      <h1 th:text="${avgtime}" />
+                      <h1>Seconds</h1>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="col-md-4 isotopeItem customerstats">
+                <div class="portfolio-item">
+                  <img src="img/portfolio/poppass.jpg" alt="" />
+                  <div class="portfolio-desc align-center">
+                    <div class="folio-info">
+                      <h1 th:text="${poppasstype}" />
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+
+              <article class="col-md-4 isotopeItem customerstats">
+                <div class="portfolio-item">
+                  <img src="img/portfolio/poptriptype.jpg" alt="" />
+                  <div class="portfolio-desc align-center">
+                    <div class="folio-info">
+                      <h1 th:text="${poptriptype}" />
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="col-md-4 isotopeItem stations">
+                <div class="portfolio-item">
+                  <img src="img/portfolio/popstart.jpg" alt="" />
+                  <div class="portfolio-desc align-center">
+                    <div class="folio-info">
+                      <h1>Station ID</h1>
+                      <h1 th:text="${popstart}" />
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="col-md-4 isotopeItem stations">
+                <div class="portfolio-item">
+                  <img src="img/portfolio/popend.jpg" alt="" />
+                  <div class="portfolio-desc align-center">
+                    <div class="folio-info">
+                      <h1>Station ID</h1>
+                      <h1 th:text="${popend}" />
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="col-md-4 isotopeItem stations">
+                <div class="portfolio-item">
+                  <img src="img/portfolio/leaststart.jpg" alt="" />
+                  <div class="portfolio-desc align-center">
+                    <div class="folio-info">
+                    <h1>Station ID</h1>
+                     <h1 th:text="${npopstart}" />
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="col-md-4 isotopeItem stations">
+                <div class="portfolio-item">
+                  <img src="img/portfolio/leastend.jpg" alt="" />
+                  <div class="portfolio-desc align-center">
+                    <div class="folio-info">
+                    <h1>Station ID</h1>
+                      <h1 th:text="${npopend}" />
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="col-md-4 isotopeItem tripinfo">
+                <div class="portfolio-item">
+                  <img src="img/portfolio/adtravel.jpg" alt="" />
+                  <div class="portfolio-desc align-center">
+                    <div class="folio-info">
+                      <h1 th:text="${dist}" />
+                      <h1>Miles</h1>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="col-md-4 isotopeItem customerstats">
+                <div class="portfolio-item">
+                  <img src="img/portfolio/regcommute.jpg" alt="" />
+                  <div class="portfolio-desc align-center">
+                    <div class="folio-info">
+                      <h1 th:text="${commute}" />
+                      <h1>People</h1>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+  
+  <section id="section-seasonal" class="section appear clearfix">
+    <div class="container">
+		<div class="section-header">
+            <h2 class="section-heading animated" data-animation="bounceInUp">Summer Stats</h2>
+            <h3>Average Distance Traveled</h3>
+            <h4 th:text="${sdist}" />
+            <h4>Miles</h4>
+            <h3>Average Time Traveled</h3>
+            <h4 th:text="${savgtime}" />
+            <h4>Seconds</h4>
+            <h3>Most Popular Trip Type</h3>
+            <h4 th:text="${spoptriptype}" />
+          </div>
+          <div class="section-header">
+            <h2 class="section-heading animated" data-animation="bounceInUp">Winter Stats</h2>
+            <h3>Average Distance Traveled</h3>
+            <h4 th:text="${wdist}" />
+            <h4>Miles</h4>
+            <h3>Average Time Traveled</h3>
+            <h4 th:text="${wavgtime}" />
+            <h4>Seconds</h4>
+            <h3>Most Popular Trip Type</h3>
+            <h4 th:text="${wpoptriptype}" />
+          </div>
+    </div>
+  </section>
+
+  <section id="section-about" class="section pad-bot30 bg-white">
+    <div class="container">
+		<div class="section-header">
+            <h2 class="section-heading animated" data-animation="bounceInUp">About</h2>
+          		<p>My name is Nicholas Perisich and I am currently a sophomore at UNC Chapel Hill. This web app looks at metrics pertaining to the bike data from LA given to us in this challenge. The top section looks at the entire data set, looking at station, customer, and ride statistics. The next section filters the data down to summer and winter sets and looks to see if there is any difference in relevant statistics, particularly pertaining to the rides themselves and the customers who use them. This web app was generated using Spring Boot and a heavily modified HTML/CSS/JS front end that I found on the internet. I used Thymeleaf  to serve the statistics from Spring Boot to the front end in case we wanted to use a CSV file (in the same format) with different data inside of it.</p>
+          		<p>From the results, it is pretty easy to ascertain that station 3053 is heavily unpopular and should be moved if at all possible. Most riders, around 70%, are regular riders, so the bike share company should be able to rely on a reasonable amount of revenue each month. The usage time tends to be around 30 minutes in length, showing that this is a popular method of getting to and from somewhat un-walkable distances. Since the majority of riders are monthly pass holders who typically take round trips for somewhat long periods of time, it is safe to say that most riders use these bikes for everyday errands. A high amount of one-way trips would indicate that this would be a primarily commuter based system, but we don’t see that in the data. The bike share system should therefore cater to its typical user base, but also try to maybe expand into the market of getting people to commute to work via rented bike as well. </p>
+          </div>
+    </div>
+  </section>
+
+
+
+  <section id="footer" class="section footer">
+      <div class="row align-center copyright">
+        <div class="col-sm-12">
+          <div class="credits">
+            <p>Site by Nicholas Perisich</p>
+            <p>nickgfp98@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <a href="#header" class="scrollup"><i class="fa fa-chevron-up"></i></a>
+
+  <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.isotope.min.js"></script>
+  <script src="js/jquery.nicescroll.min.js"></script>
+  <script src="js/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="js/skrollr.min.js"></script>
+  <script src="js/jquery.scrollTo.js"></script>
+  <script src="js/jquery.localScroll.js"></script>
+  <script src="js/stellar.js"></script>
+  <script src="js/jquery.appear.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAza-ujXEdOUdyJfBVaOzBFC-Eqxe5-BnU"></script>
+  <script src="js/main.js"></script>
+  <script src="contactform/contactform.js"></script>
+</body>
+
+</html>
